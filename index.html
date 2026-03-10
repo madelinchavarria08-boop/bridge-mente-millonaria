@@ -39,7 +39,7 @@
     @keyframes glowpulse{0%,100%{box-shadow:0 0 40px var(--gold-glow),0 4px 20px rgba(0,0,0,0.4);}50%{box-shadow:0 0 70px rgba(201,168,76,0.4),0 4px 20px rgba(0,0,0,0.4);}}
     .cta-sub{font-size:12px;color:var(--text-muted);letter-spacing:0.05em;}
     .mockup-wrap{display:flex;justify-content:center;padding:60px 24px;background:var(--surface);border-bottom:1px solid var(--border);}
-    .mockup-img{max-width:320px;width:100%;border-radius:4px;filter:drop-shadow(0 0 60px rgba(201,168,76,0.2)) drop-shadow(0 20px 40px rgba(0,0,0,0.6));animation:float 4s ease-in-out infinite;}
+    .mockup-img{max-width:320px;width:100%;filter:drop-shadow(0 0 60px rgba(201,168,76,0.2)) drop-shadow(0 20px 40px rgba(0,0,0,0.6));animation:float 4s ease-in-out infinite;}
     @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
     .section{max-width:760px;margin:0 auto;padding:70px 24px;}
     .label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
@@ -57,17 +57,19 @@
     .learn-text{font-size:15px;color:var(--text);line-height:1.65;}
     .learn-text strong{color:var(--white);font-weight:600;display:block;margin-bottom:2px;}
     .bonus-grid{display:flex;flex-direction:column;gap:14px;margin-top:32px;}
-    .bonus-card{display:flex;align-items:flex-start;gap:18px;padding:20px 22px;border:1px solid var(--border);background:var(--surface2);transition:border-color 0.2s,background 0.2s;}
+    .bonus-card{display:flex;align-items:center;gap:18px;padding:20px 22px;border:1px solid var(--border);background:var(--surface2);transition:border-color 0.2s,background 0.2s;}
     .bonus-card:hover{border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.04);}
-    .bonus-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--gold);line-height:1;flex-shrink:0;width:32px;text-align:center;opacity:0.7;}
+    .bonus-img{width:80px;height:80px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.5));}
     .bonus-content strong{display:block;font-size:15px;font-weight:600;color:var(--white);margin-bottom:5px;}
     .bonus-content p{font-size:13px;color:var(--text-muted);line-height:1.65;margin:0;}
     .bonus-val{font-size:11px;color:var(--gold-dim);margin-top:5px;letter-spacing:0.05em;}
+    .product-valor{width:100%;max-width:500px;display:block;margin:32px auto;filter:drop-shadow(0 8px 30px rgba(0,0,0,0.5));}
     .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:32px;}
     .testi-card{border:1px solid var(--border);padding:22px;background:var(--surface2);}
     .testi-stars{color:var(--gold);font-size:13px;margin-bottom:12px;letter-spacing:2px;}
     .testi-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--text-muted);line-height:1.75;margin-bottom:14px;}
     .testi-name{font-size:12px;font-weight:600;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;}
+    .testi-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;margin-bottom:12px;border:1px solid var(--border);}
     .price-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:70px 24px;text-align:center;}
     .price-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,46px);font-weight:700;color:var(--white);margin-bottom:10px;letter-spacing:-0.01em;}
     .price-section>p{color:var(--text-muted);font-size:15px;margin-bottom:40px;}
@@ -81,16 +83,14 @@
     .price-cta{display:block;background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:var(--bg);font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;padding:18px 32px;text-decoration:none;border-radius:2px;box-shadow:0 0 40px var(--gold-glow);animation:glowpulse 2.5s ease-in-out infinite;margin-bottom:14px;transition:transform 0.2s;}
     .price-cta:hover{transform:translateY(-2px);animation:none;}
     .price-secure{font-size:12px;color:var(--text-muted);}
-    .guarantee-box{max-width:500px;margin:24px auto 0;border:1px solid var(--border);padding:20px 24px;text-align:left;background:rgba(201,168,76,0.03);}
-    .guarantee-box strong{color:var(--gold);font-size:13px;display:block;margin-bottom:6px;}
-    .guarantee-box p{font-size:13px;color:var(--text-muted);line-height:1.7;margin:0;}
+    .guarantee-img{max-width:180px;display:block;margin:24px auto 0;}
     .gold-rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.4;}
     footer{background:var(--bg);padding:32px 24px;text-align:center;border-top:1px solid var(--border);}
     footer p{font-size:12px;color:rgba(232,224,208,0.25);line-height:1.9;}
     footer a{color:rgba(232,224,208,0.35);text-decoration:none;}
     .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
-    @media(max-width:480px){.hero{padding:56px 18px 50px;}.section{padding:50px 18px;}.dark-band{padding:50px 18px;}.price-card{padding:24px 18px;}.price-amount{font-size:48px;}}
+    @media(max-width:480px){.hero{padding:56px 18px 50px;}.section{padding:50px 18px;}.dark-band{padding:50px 18px;}.price-card{padding:24px 18px;}.price-amount{font-size:48px;}.bonus-card{flex-direction:column;}.bonus-img{width:60px;height:60px;}}
   </style>
 </head>
 <body>
@@ -111,7 +111,7 @@
 <div class="gold-rule"></div>
 
 <div class="mockup-wrap">
-  <img class="mockup-img" src="mockup.png" alt="Desbloquea Tu Mente Millonaria"/>
+  <img class="mockup-img" src="MockupCalidad-mobil-951x1536.webp" alt="Desbloquea Tu Mente Millonaria"/>
 </div>
 
 <div class="gold-rule"></div>
@@ -148,13 +148,31 @@
   <div class="label">Bonuses exclusivos</div>
   <h2>Si tomas acción ahora mismo<br>recibirás 5 bonuses exclusivos</h2>
   <p style="color:var(--text-muted);">Valorados en más de $60 USD — incluidos sin costo adicional</p>
+
   <div class="bonus-grid">
-    <div class="bonus-card reveal"><div class="bonus-num">I</div><div class="bonus-content"><strong>Cómo crear un negocio exitoso desde cero</strong><p>Un plan detallado para iniciar tu propio negocio con éxito, desde la planificación hasta la ejecución.</p><div class="bonus-val">Valorado en $12 USD — INCLUIDO GRATIS</div></div></div>
-    <div class="bonus-card reveal"><div class="bonus-num">II</div><div class="bonus-content"><strong>7 maneras de generar ingresos en internet</strong><p>Siete estrategias probadas para ganar dinero incluso mientras duermes.</p><div class="bonus-val">Valorado en $15 USD — INCLUIDO GRATIS</div></div></div>
-    <div class="bonus-card reveal"><div class="bonus-num">III</div><div class="bonus-content"><strong>12 hacks letales de persuasión para vender más</strong><p>Aprende a usar la psicología del comportamiento humano para cerrar más ventas.</p><div class="bonus-val">Valorado en $11 USD — INCLUIDO GRATIS</div></div></div>
-    <div class="bonus-card reveal"><div class="bonus-num">IV</div><div class="bonus-content"><strong>La guía completa para invertir como un experto</strong><p>Todo lo que necesitas para invertir con confianza y construir una cartera sólida.</p><div class="bonus-val">Valorado en $12 USD — INCLUIDO GRATIS</div></div></div>
-    <div class="bonus-card reveal"><div class="bonus-num">V</div><div class="bonus-content"><strong>10 estrategias para gestionar tu dinero inteligentemente</strong><p>Herramientas prácticas para ahorrar más y liquidar deudas efectivamente.</p><div class="bonus-val">Valorado en $10 USD — INCLUIDO GRATIS</div></div></div>
+    <div class="bonus-card reveal">
+      <img class="bonus-img" src="bonus-1-copy.webp" alt="Bonus 1"/>
+      <div class="bonus-content"><strong>Cómo crear un negocio exitoso desde cero</strong><p>Un plan detallado para iniciar tu propio negocio con éxito, desde la planificación hasta la ejecución.</p><div class="bonus-val">Valorado en $12 USD — INCLUIDO GRATIS</div></div>
+    </div>
+    <div class="bonus-card reveal">
+      <img class="bonus-img" src="bonus-2-copy.webp" alt="Bonus 2"/>
+      <div class="bonus-content"><strong>7 maneras de generar ingresos en internet</strong><p>Siete estrategias probadas para ganar dinero incluso mientras duermes.</p><div class="bonus-val">Valorado en $15 USD — INCLUIDO GRATIS</div></div>
+    </div>
+    <div class="bonus-card reveal">
+      <img class="bonus-img" src="bonus-3-copy.webp" alt="Bonus 3"/>
+      <div class="bonus-content"><strong>12 hacks letales de persuasión para vender más</strong><p>Aprende a usar la psicología del comportamiento humano para cerrar más ventas.</p><div class="bonus-val">Valorado en $11 USD — INCLUIDO GRATIS</div></div>
+    </div>
+    <div class="bonus-card reveal">
+      <img class="bonus-img" src="bonus-4-1.webp" alt="Bonus 4"/>
+      <div class="bonus-content"><strong>La guía completa para invertir como un experto</strong><p>Todo lo que necesitas para invertir con confianza y construir una cartera sólida.</p><div class="bonus-val">Valorado en $12 USD — INCLUIDO GRATIS</div></div>
+    </div>
+    <div class="bonus-card reveal">
+      <img class="bonus-img" src="Bonus-5-1.webp" alt="Bonus 5"/>
+      <div class="bonus-content"><strong>10 estrategias para gestionar tu dinero inteligentemente</strong><p>Herramientas prácticas para ahorrar más y liquidar deudas efectivamente.</p><div class="bonus-val">Valorado en $10 USD — INCLUIDO GRATIS</div></div>
+    </div>
   </div>
+
+  <img class="product-valor" src="producto-valor.webp" alt="Valor del producto"/>
 </div>
 
 <div class="gold-rule"></div>
@@ -164,9 +182,24 @@
     <div class="label">Testimonios</div>
     <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4.5vw,42px);font-weight:700;color:var(--white);line-height:1.2;margin-bottom:32px;">Más de 7,000 personas ya transformaron su mentalidad</h2>
     <div class="testi-grid">
-      <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-text">"Me pareció excelente, muy atrapante y cada capítulo me dejó pensando. Es un libro que toda persona debería leer."</p><div class="testi-name">Rodrigo A. — México</div></div>
-      <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-text">"En menos de una semana cambió completamente cómo veo mis decisiones de dinero. Vale mucho más de lo que cuesta."</p><div class="testi-name">Mariana G. — Colombia</div></div>
-      <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-text">"Nunca pensé que un ebook pudiera cambiarme tanto la perspectiva. Los bonuses son increíbles."</p><div class="testi-name">Carlos V. — Argentina</div></div>
+      <div class="testi-card reveal">
+        <img class="testi-avatar" src="rodrigo.svg" alt="Rodrigo"/>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Me pareció excelente, muy atrapante y cada capítulo me dejó pensando. Es un libro que toda persona debería leer."</p>
+        <div class="testi-name">Rodrigo A. — México</div>
+      </div>
+      <div class="testi-card reveal">
+        <img class="testi-avatar" src="barbara.svg" alt="Barbara"/>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"En menos de una semana cambió completamente cómo veo mis decisiones de dinero. Vale mucho más de lo que cuesta."</p>
+        <div class="testi-name">Bárbara M. — Colombia</div>
+      </div>
+      <div class="testi-card reveal">
+        <img class="testi-avatar" src="tomas.svg" alt="Tomas"/>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Nunca pensé que un ebook pudiera cambiarme tanto la perspectiva. Los bonuses son increíbles."</p>
+        <div class="testi-name">Tomás V. — Argentina</div>
+      </div>
     </div>
   </div>
 </div>
@@ -193,10 +226,7 @@
     <a href="https://go.hotmart.com/Q100560201X?ap=5e14" class="price-cta" onclick="fbq('track','Lead')">✦ Sí, Quiero el Ebook y los Bonuses →</a>
     <div class="price-secure">🔒 Pago 100% seguro procesado por Hotmart · Acceso inmediato</div>
   </div>
-  <div class="guarantee-box">
-    <strong>🛡️ Garantía de satisfacción</strong>
-    <p>Si por alguna razón el ebook no cumple tus expectativas, Hotmart te ofrece garantía de devolución. Tu inversión está completamente protegida.</p>
-  </div>
+  <img class="guarantee-img" src="SATISFACION-GARANTIZADA2-2.png" alt="Garantía de satisfacción"/>
 </section>
 
 <footer>
