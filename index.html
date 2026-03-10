@@ -17,127 +17,129 @@
   fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1220972163454715&ev=PageView&noscript=1"/></noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--gold:#C9A84C;--gold-bright:#F0CC6A;--gold-dim:#8A6E30;--gold-glow:rgba(201,168,76,0.25);--bg:#080706;--surface:#0F0D0B;--surface2:#161310;--border:rgba(201,168,76,0.18);--text:#E8E0D0;--text-muted:rgba(232,224,208,0.55);--white:#FAF6EE;}
+    :root{--gold:#C9A84C;--gold-bright:#F0CC6A;--gold-dim:#8A6E30;--gold-glow:rgba(201,168,76,0.3);--bg:#060504;--surface:#0D0B09;--surface2:#131008;--border:rgba(201,168,76,0.2);--text:#EDE5D5;--text-muted:rgba(237,229,213,0.6);--white:#FBF7EF;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
-    body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
-    body::before{content:'';position:fixed;inset:0;z-index:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;opacity:0.5;}
+    body{background:var(--bg);color:var(--text);font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden;}
+    body::before{content:'';position:fixed;inset:0;z-index:0;opacity:0.4;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;}
     *{position:relative;z-index:1;}
-    .topbar{background:var(--gold);color:var(--bg);text-align:center;padding:11px 20px;font-size:13px;font-weight:600;letter-spacing:0.05em;}
-    .hero{padding:80px 24px 70px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,0.12) 0%,transparent 65%);border-bottom:1px solid var(--border);}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--gold);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:6px 18px;border-radius:2px;margin-bottom:32px;font-weight:500;}
-    .hero h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(32px,6.5vw,62px);color:var(--white);line-height:1.1;max-width:820px;margin:0 auto 10px;letter-spacing:-0.01em;}
-    .hero h1 em{font-style:italic;color:var(--gold-bright);}
-    .hero-divider{width:60px;height:1px;background:var(--gold);margin:24px auto;opacity:0.5;}
-    .hero-sub{font-size:clamp(15px,2vw,18px);color:var(--text-muted);max-width:560px;margin:0 auto 40px;line-height:1.8;}
-    .cta-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;}
-    .cta-main{display:inline-block;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-bright) 50%,var(--gold) 100%);background-size:200% auto;color:var(--bg);font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;letter-spacing:0.08em;text-transform:uppercase;padding:18px 44px;border-radius:2px;text-decoration:none;box-shadow:0 0 40px var(--gold-glow),0 4px 20px rgba(0,0,0,0.4);animation:shimmer 3s linear infinite,glowpulse 2.5s ease-in-out infinite;transition:transform 0.2s;}
-    .cta-main:hover{transform:translateY(-2px);animation:none;box-shadow:0 0 60px rgba(201,168,76,0.4),0 8px 30px rgba(0,0,0,0.5);}
-    @keyframes shimmer{0%{background-position:0% center;}100%{background-position:200% center;}}
-    @keyframes glowpulse{0%,100%{box-shadow:0 0 40px var(--gold-glow),0 4px 20px rgba(0,0,0,0.4);}50%{box-shadow:0 0 70px rgba(201,168,76,0.4),0 4px 20px rgba(0,0,0,0.4);}}
-    .cta-sub{font-size:12px;color:var(--text-muted);letter-spacing:0.05em;}
-    .mockup-wrap{display:flex;justify-content:center;padding:60px 24px;background:var(--surface);border-bottom:1px solid var(--border);}
-    .mockup-img{max-width:320px;width:100%;filter:drop-shadow(0 0 60px rgba(201,168,76,0.2)) drop-shadow(0 20px 40px rgba(0,0,0,0.6));animation:float 4s ease-in-out infinite;}
-    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-    .section{max-width:760px;margin:0 auto;padding:70px 24px;}
-    .label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
-    .label::after{content:'';flex:0 0 30px;height:1px;background:var(--gold);opacity:0.4;}
-    .section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4.5vw,42px);font-weight:700;color:var(--white);line-height:1.2;margin-bottom:24px;letter-spacing:-0.01em;}
-    .section p{font-size:16px;line-height:1.9;color:var(--text-muted);margin-bottom:20px;}
-    .section p strong{color:var(--text);font-weight:500;}
-    .quote{border:1px solid var(--border);border-left:3px solid var(--gold);padding:24px 28px;margin:36px 0;background:var(--surface);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--white);line-height:1.7;}
-    .dark-band{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:70px 24px;}
-    .dark-band-inner{max-width:760px;margin:0 auto;}
-    .learn-list{display:flex;flex-direction:column;gap:12px;margin-top:32px;}
-    .learn-item{display:flex;align-items:flex-start;gap:16px;padding:18px 20px;background:rgba(201,168,76,0.04);border:1px solid var(--border);border-radius:2px;transition:background 0.2s,border-color 0.2s;}
-    .learn-item:hover{background:rgba(201,168,76,0.08);border-color:rgba(201,168,76,0.35);}
-    .learn-diamond{color:var(--gold);font-size:10px;margin-top:5px;flex-shrink:0;}
-    .learn-text{font-size:15px;color:var(--text);line-height:1.65;}
-    .learn-text strong{color:var(--white);font-weight:600;display:block;margin-bottom:2px;}
-    .bonus-grid{display:flex;flex-direction:column;gap:14px;margin-top:32px;}
-    .bonus-card{display:flex;align-items:center;gap:18px;padding:20px 22px;border:1px solid var(--border);background:var(--surface2);transition:border-color 0.2s,background 0.2s;}
-    .bonus-card:hover{border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.04);}
-    .bonus-img{width:80px;height:80px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.5));}
-    .bonus-content strong{display:block;font-size:15px;font-weight:600;color:var(--white);margin-bottom:5px;}
-    .bonus-content p{font-size:13px;color:var(--text-muted);line-height:1.65;margin:0;}
-    .bonus-val{font-size:11px;color:var(--gold-dim);margin-top:5px;letter-spacing:0.05em;}
-    .product-valor{width:100%;max-width:500px;display:block;margin:32px auto;filter:drop-shadow(0 8px 30px rgba(0,0,0,0.5));}
-    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:32px;}
-    .testi-card{border:1px solid var(--border);padding:22px;background:var(--surface2);}
-    .testi-stars{color:var(--gold);font-size:13px;margin-bottom:12px;letter-spacing:2px;}
-    .testi-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--text-muted);line-height:1.75;margin-bottom:14px;}
-    .testi-name{font-size:12px;font-weight:600;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;}
-    .testi-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;margin-bottom:12px;border:1px solid var(--border);}
-    .price-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:70px 24px;text-align:center;}
-    .price-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,46px);font-weight:700;color:var(--white);margin-bottom:10px;letter-spacing:-0.01em;}
-    .price-section>p{color:var(--text-muted);font-size:15px;margin-bottom:40px;}
-    .price-card{max-width:500px;margin:0 auto 24px;border:1px solid var(--border);background:var(--surface2);padding:36px 32px;box-shadow:0 0 80px rgba(201,168,76,0.08);}
-    .price-old{font-size:14px;color:var(--text-muted);text-decoration:line-through;margin-bottom:4px;}
-    .price-amount{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;color:var(--gold-bright);line-height:1;margin-bottom:4px;}
-    .price-amount sup{font-size:26px;vertical-align:super;}
-    .price-note{font-size:13px;color:var(--text-muted);margin-bottom:28px;}
-    .price-includes{text-align:left;font-size:13px;color:var(--text-muted);line-height:2;margin-bottom:28px;border-top:1px solid var(--border);padding-top:20px;}
-    .price-includes span{color:var(--text);font-weight:500;}
-    .price-cta{display:block;background:linear-gradient(135deg,var(--gold),var(--gold-bright));color:var(--bg);font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;padding:18px 32px;text-decoration:none;border-radius:2px;box-shadow:0 0 40px var(--gold-glow);animation:glowpulse 2.5s ease-in-out infinite;margin-bottom:14px;transition:transform 0.2s;}
-    .price-cta:hover{transform:translateY(-2px);animation:none;}
-    .price-secure{font-size:12px;color:var(--text-muted);}
-    .guarantee-img{max-width:180px;display:block;margin:24px auto 0;}
-    .gold-rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.4;}
-    footer{background:var(--bg);padding:32px 24px;text-align:center;border-top:1px solid var(--border);}
-    footer p{font-size:12px;color:rgba(232,224,208,0.25);line-height:1.9;}
-    footer a{color:rgba(232,224,208,0.35);text-decoration:none;}
-    .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .topbar{background:var(--gold);color:#060504;text-align:center;padding:13px 20px;font-family:'Open Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;}
+    .hero{padding:80px 24px 72px;text-align:center;background:radial-gradient(ellipse at 50% -10%,rgba(201,168,76,0.15) 0%,transparent 60%);border-bottom:1px solid var(--border);}
+    .hero-badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;padding:7px 20px;margin-bottom:28px;font-weight:600;}
+    .hero h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(36px,7vw,72px);color:var(--white);line-height:1.08;max-width:860px;margin:0 auto 12px;}
+    .hero h1 span{color:var(--gold-bright);font-style:italic;}
+    .hero-line{width:70px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:28px auto;}
+    .hero-sub{font-size:clamp(16px,2.2vw,20px);color:var(--text-muted);max-width:580px;margin:0 auto 44px;line-height:1.85;font-weight:300;}
+    .btn-main{display:inline-block;background:linear-gradient(135deg,#B8922A,var(--gold-bright),#B8922A);background-size:200% auto;color:#060504;font-family:'Open Sans',sans-serif;font-weight:700;font-size:17px;letter-spacing:0.1em;text-transform:uppercase;padding:20px 50px;text-decoration:none;box-shadow:0 0 50px var(--gold-glow),0 4px 24px rgba(0,0,0,0.5);animation:shine 3s linear infinite,glow 2.5s ease-in-out infinite;transition:transform 0.2s;}
+    .btn-main:hover{transform:translateY(-3px);animation:none;box-shadow:0 0 80px rgba(201,168,76,0.5);}
+    @keyframes shine{0%{background-position:0%}100%{background-position:200%}}
+    @keyframes glow{0%,100%{box-shadow:0 0 50px var(--gold-glow),0 4px 24px rgba(0,0,0,0.5)}50%{box-shadow:0 0 90px rgba(201,168,76,0.5),0 4px 24px rgba(0,0,0,0.5)}}
+    .hero-trust{margin-top:16px;font-size:13px;color:var(--text-muted);letter-spacing:0.04em;}
+    .mockup-section{background:var(--surface);border-bottom:1px solid var(--border);padding:64px 24px;display:flex;justify-content:center;}
+    .mockup-img{max-width:340px;width:100%;filter:drop-shadow(0 0 70px rgba(201,168,76,0.22)) drop-shadow(0 24px 48px rgba(0,0,0,0.7));animation:float 4s ease-in-out infinite;}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    .gold-rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.35;}
+    .section{max-width:780px;margin:0 auto;padding:76px 24px;}
+    .eyebrow{font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+    .eyebrow::after{content:'';flex:0 0 36px;height:1px;background:var(--gold);opacity:0.5;}
+    .section h2{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(30px,5vw,50px);color:var(--white);line-height:1.15;margin-bottom:28px;}
+    .section h2 em{font-style:italic;color:var(--gold-bright);}
+    .section p{font-size:17px;line-height:1.9;color:var(--text-muted);margin-bottom:22px;}
+    .section p strong{color:var(--text);font-weight:600;}
+    .pull-quote{border-left:3px solid var(--gold);padding:22px 28px;margin:36px 0;background:rgba(201,168,76,0.05);font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,2.5vw,22px);color:var(--white);line-height:1.65;}
+    .dark-band{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:76px 24px;}
+    .dark-band-inner{max-width:780px;margin:0 auto;}
+    .dark-band h2{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(30px,5vw,50px);color:var(--white);line-height:1.15;margin-bottom:12px;}
+    .dark-band-inner>p{font-size:17px;color:var(--text-muted);margin-bottom:0;}
+    .learn-list{display:flex;flex-direction:column;gap:14px;margin-top:36px;}
+    .learn-item{display:flex;align-items:flex-start;gap:18px;padding:20px 24px;background:rgba(201,168,76,0.04);border:1px solid var(--border);transition:background 0.25s,border-color 0.25s;}
+    .learn-item:hover{background:rgba(201,168,76,0.09);border-color:rgba(201,168,76,0.38);}
+    .learn-dot{color:var(--gold);font-size:18px;flex-shrink:0;margin-top:2px;}
+    .learn-body{font-size:16px;color:var(--text);line-height:1.7;}
+    .learn-body strong{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);display:block;margin-bottom:4px;font-weight:700;font-style:italic;}
+    .bonus-grid{display:flex;flex-direction:column;gap:16px;margin-top:36px;}
+    .bonus-card{display:flex;align-items:center;gap:20px;padding:22px 24px;border:1px solid var(--border);background:var(--surface2);transition:border-color 0.25s,background 0.25s;}
+    .bonus-card:hover{border-color:rgba(201,168,76,0.42);background:rgba(201,168,76,0.05);}
+    .bonus-img{width:90px;height:90px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 6px 16px rgba(0,0,0,0.6));}
+    .bonus-body strong{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);display:block;margin-bottom:6px;font-style:italic;}
+    .bonus-body p{font-size:14px;color:var(--text-muted);line-height:1.7;margin:0;}
+    .bonus-val{font-size:12px;color:var(--gold-dim);margin-top:6px;font-weight:600;letter-spacing:0.05em;}
+    .product-valor-img{display:block;max-width:520px;width:100%;margin:44px auto 0;filter:drop-shadow(0 8px 32px rgba(0,0,0,0.6));}
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:36px;}
+    .testi-card{border:1px solid var(--border);padding:26px;background:var(--surface2);}
+    .testi-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);margin-bottom:14px;}
+    .testi-stars{color:var(--gold);font-size:15px;margin-bottom:12px;letter-spacing:3px;}
+    .testi-text{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:var(--text-muted);line-height:1.8;margin-bottom:16px;}
+    .testi-name{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;}
+    .price-section{background:var(--surface);border-top:1px solid var(--border);padding:76px 24px;text-align:center;}
+    .price-section h2{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(32px,5.5vw,54px);color:var(--white);margin-bottom:12px;line-height:1.15;}
+    .price-section h2 em{font-style:italic;color:var(--gold-bright);}
+    .price-section>p{font-size:17px;color:var(--text-muted);margin-bottom:44px;}
+    .price-box{max-width:520px;margin:0 auto 32px;border:1px solid var(--border);background:var(--surface2);padding:40px 36px;box-shadow:0 0 100px rgba(201,168,76,0.08);}
+    .price-old{font-size:15px;color:var(--text-muted);text-decoration:line-through;margin-bottom:6px;}
+    .price-num{font-family:'Playfair Display',serif;font-weight:900;font-size:72px;color:var(--gold-bright);line-height:1;margin-bottom:4px;}
+    .price-num sup{font-size:30px;vertical-align:super;}
+    .price-note{font-size:14px;color:var(--text-muted);margin-bottom:32px;}
+    .price-list{text-align:left;font-size:14px;color:var(--text-muted);line-height:2.1;margin-bottom:32px;border-top:1px solid var(--border);padding-top:24px;}
+    .price-list span{color:var(--text);font-weight:600;}
+    .btn-price{display:block;background:linear-gradient(135deg,#B8922A,var(--gold-bright),#B8922A);background-size:200% auto;color:#060504;font-family:'Open Sans',sans-serif;font-weight:700;font-size:16px;letter-spacing:0.1em;text-transform:uppercase;padding:20px 32px;text-decoration:none;box-shadow:0 0 50px var(--gold-glow);animation:shine 3s linear infinite,glow 2.5s ease-in-out infinite;margin-bottom:16px;transition:transform 0.2s;}
+    .btn-price:hover{transform:translateY(-2px);animation:none;}
+    .price-secure{font-size:13px;color:var(--text-muted);}
+    .guarantee-img{max-width:200px;display:block;margin:32px auto 0;filter:drop-shadow(0 6px 20px rgba(0,0,0,0.5));}
+    footer{background:var(--bg);padding:36px 24px;text-align:center;border-top:1px solid var(--border);}
+    footer p{font-size:12px;color:rgba(237,229,213,0.22);line-height:2;}
+    footer a{color:rgba(237,229,213,0.32);text-decoration:none;}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
-    @media(max-width:480px){.hero{padding:56px 18px 50px;}.section{padding:50px 18px;}.dark-band{padding:50px 18px;}.price-card{padding:24px 18px;}.price-amount{font-size:48px;}.bonus-card{flex-direction:column;}.bonus-img{width:60px;height:60px;}}
+    @media(max-width:520px){.hero{padding:56px 18px 52px;}.section,.dark-band{padding:56px 18px;}.price-box{padding:28px 18px;}.price-num{font-size:54px;}.bonus-card{flex-direction:column;align-items:flex-start;}.bonus-img{width:70px;height:70px;}}
   </style>
 </head>
 <body>
 
-<div class="topbar">⚡ OFERTA ESPECIAL · Solo $14.99 USD · Acceso inmediato · Pago único</div>
+<div class="topbar">⚡ OFERTA ESPECIAL · Solo $14.99 USD · Acceso inmediato · Sin mensualidades</div>
 
 <section class="hero">
-  <div class="hero-eyebrow">◆ Ebook Digital · Julián Musa</div>
-  <h1>Descubre cómo tu mente puede<br><em>pensar estratégicamente</em><br>para alcanzar el éxito financiero</h1>
-  <div class="hero-divider"></div>
-  <p class="hero-sub">Más de 7,000 personas ya transformaron su relación con el dinero.<br>Ahora es tu turno.</p>
-  <div class="cta-wrap">
-    <a href="https://go.hotmart.com/Q100560201X?ap=5e14" class="cta-main" onclick="fbq('track','Lead')">✦ Quiero el Ebook Ahora →</a>
-    <span class="cta-sub">🔒 Pago seguro · Acceso inmediato · Garantía incluida</span>
-  </div>
+  <div class="hero-badge">◆ Ebook Digital · Julián Musa</div>
+  <h1>Descubre cómo tu mente puede<br><span>pensar estratégicamente</span><br>para alcanzar el éxito financiero</h1>
+  <div class="hero-line"></div>
+  <p class="hero-sub">Más de 7,000 personas ya transformaron su relación con el dinero. Ahora es tu turno.</p>
+  <a href="https://go.hotmart.com/Q100560201X?ap=5e14" class="btn-main" onclick="fbq('track','Lead')">✦ Quiero el Ebook Ahora →</a>
+  <div class="hero-trust">🔒 Pago seguro · Acceso inmediato · Garantía incluida</div>
 </section>
 
 <div class="gold-rule"></div>
 
-<div class="mockup-wrap">
+<div class="mockup-section">
   <img class="mockup-img" src="MockupCalidad-mobil-951x1536.webp" alt="Desbloquea Tu Mente Millonaria"/>
 </div>
 
 <div class="gold-rule"></div>
 
 <div class="section reveal">
-  <div class="label">Mi historia</div>
-  <h2>¿Por qué algunas personas alcanzan el éxito y otras no?</h2>
+  <div class="eyebrow">Mi historia</div>
+  <h2>¿Alguna vez te has preguntado por qué algunas personas alcanzan el éxito <em>y otras no?</em></h2>
   <p>Aunque todos deseamos tener éxito, la triste realidad es que la mayoría de las personas <strong>no lo logra.</strong> Se quedan atrapadas en un ciclo de constantes problemas para ganar dinero, sin saber qué hacer para <strong>cambiar su situación.</strong></p>
   <p>Yo también lo viví. Trabajaba duro, llegaba la quincena, pagaba lo necesario, y el dinero simplemente desaparecía. No era un mal mes — era <strong>todos los meses.</strong></p>
-  <div class="quote">"El problema no estaba en cuánto ganaba. Estaba en cómo pensaba sobre el dinero — y eso nunca me lo había enseñado nadie."</div>
-  <p>Las personas exitosas no deben su éxito a la suerte. Han desarrollado <strong>patrones de pensamiento que los guían hacia la riqueza.</strong> Y la buena noticia es que <strong>todos podemos aprenderlos.</strong></p>
+  <div class="pull-quote">"El problema no estaba en cuánto ganaba. Estaba en cómo pensaba sobre el dinero — y eso nunca me lo había enseñado nadie."</div>
+  <p>Las personas exitosas no deben su éxito a la suerte. La clave está en su <strong>forma de pensar.</strong> Han desarrollado <strong>patrones de pensamiento que los guían hacia el éxito.</strong></p>
+  <p>La buena noticia es que <strong>todos podemos adoptar estos patrones.</strong> Hacer dinero es una habilidad que se puede aprender, independientemente de tu situación o educación.</p>
 </div>
 
 <div class="gold-rule"></div>
 
 <div class="dark-band">
   <div class="dark-band-inner">
-    <div class="label">Lo que aprenderás</div>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4.5vw,42px);font-weight:700;color:var(--white);line-height:1.2;margin-bottom:8px;">LO QUE APRENDERÁS EN ESTE EBOOK</h2>
-    <p style="color:var(--text-muted);font-size:15px;margin-bottom:0;">Todo lo que necesitas para reprogramar tu mente hacia la prosperidad</p>
+    <div class="eyebrow">Lo que aprenderás</div>
+    <h2>LO QUE APRENDERÁS <em>EN ESTE EBOOK</em></h2>
+    <p>Todo lo que necesitas para reprogramar tu mente hacia la prosperidad</p>
     <div class="learn-list">
-      <div class="learn-item reveal"><span class="learn-diamond">◆</span><div class="learn-text"><strong>El patrón de pensamiento de los millonarios</strong>El mismo que han utilizado todos los que se hicieron ricos desde cero.</div></div>
-      <div class="learn-item reveal"><span class="learn-diamond">◆</span><div class="learn-text"><strong>Reprogramación mental profunda</strong>Modificarás tu mente para pensar de manera crítica, estratégica y creativa.</div></div>
-      <div class="learn-item reveal"><span class="learn-diamond">◆</span><div class="learn-text"><strong>Decisiones inteligentes y rentables</strong>Te capacitará para tomar decisiones informadas que multipliquen tu dinero.</div></div>
-      <div class="learn-item reveal"><span class="learn-diamond">◆</span><div class="learn-text"><strong>Nuevas fuentes de ingresos</strong>Descubrirás maneras de generar dinero que antes no imaginabas.</div></div>
-      <div class="learn-item reveal"><span class="learn-diamond">◆</span><div class="learn-text"><strong>Mentalidad de éxito sostenible</strong>Mantendrás una mentalidad positiva y enfocada en el éxito a largo plazo.</div></div>
+      <div class="learn-item reveal"><span class="learn-dot">◆</span><div class="learn-body"><strong>El patrón de pensamiento de los millonarios</strong>El mismo que han utilizado todos los que se hicieron ricos desde cero, sin importar su punto de partida.</div></div>
+      <div class="learn-item reveal"><span class="learn-dot">◆</span><div class="learn-body"><strong>Reprogramación mental profunda</strong>Modificarás tu mente para pensar de manera crítica, estratégica y creativa.</div></div>
+      <div class="learn-item reveal"><span class="learn-dot">◆</span><div class="learn-body"><strong>Decisiones inteligentes y rentables</strong>Te capacitará para tomar decisiones informadas que multipliquen tu dinero consistentemente.</div></div>
+      <div class="learn-item reveal"><span class="learn-dot">◆</span><div class="learn-body"><strong>Nuevas fuentes de ingresos</strong>Descubrirás maneras de generar dinero que antes no imaginabas.</div></div>
+      <div class="learn-item reveal"><span class="learn-dot">◆</span><div class="learn-body"><strong>Mentalidad de éxito sostenible</strong>Mantendrás una mentalidad positiva y enfocada en el éxito a largo plazo.</div></div>
     </div>
   </div>
 </div>
@@ -145,61 +147,29 @@
 <div class="gold-rule"></div>
 
 <div class="section">
-  <div class="label">Bonuses exclusivos</div>
-  <h2>Si tomas acción ahora mismo<br>recibirás 5 bonuses exclusivos</h2>
+  <div class="eyebrow">Bonuses exclusivos</div>
+  <h2>Si tomas acción ahora mismo recibirás <em>5 bonuses exclusivos</em></h2>
   <p style="color:var(--text-muted);">Valorados en más de $60 USD — incluidos sin costo adicional</p>
-
   <div class="bonus-grid">
-    <div class="bonus-card reveal">
-      <img class="bonus-img" src="bonus-1-copy.webp" alt="Bonus 1"/>
-      <div class="bonus-content"><strong>Cómo crear un negocio exitoso desde cero</strong><p>Un plan detallado para iniciar tu propio negocio con éxito, desde la planificación hasta la ejecución.</p><div class="bonus-val">Valorado en $12 USD — INCLUIDO GRATIS</div></div>
-    </div>
-    <div class="bonus-card reveal">
-      <img class="bonus-img" src="bonus-2-copy.webp" alt="Bonus 2"/>
-      <div class="bonus-content"><strong>7 maneras de generar ingresos en internet</strong><p>Siete estrategias probadas para ganar dinero incluso mientras duermes.</p><div class="bonus-val">Valorado en $15 USD — INCLUIDO GRATIS</div></div>
-    </div>
-    <div class="bonus-card reveal">
-      <img class="bonus-img" src="bonus-3-copy.webp" alt="Bonus 3"/>
-      <div class="bonus-content"><strong>12 hacks letales de persuasión para vender más</strong><p>Aprende a usar la psicología del comportamiento humano para cerrar más ventas.</p><div class="bonus-val">Valorado en $11 USD — INCLUIDO GRATIS</div></div>
-    </div>
-    <div class="bonus-card reveal">
-      <img class="bonus-img" src="bonus-4-1.webp" alt="Bonus 4"/>
-      <div class="bonus-content"><strong>La guía completa para invertir como un experto</strong><p>Todo lo que necesitas para invertir con confianza y construir una cartera sólida.</p><div class="bonus-val">Valorado en $12 USD — INCLUIDO GRATIS</div></div>
-    </div>
-    <div class="bonus-card reveal">
-      <img class="bonus-img" src="Bonus-5-1.webp" alt="Bonus 5"/>
-      <div class="bonus-content"><strong>10 estrategias para gestionar tu dinero inteligentemente</strong><p>Herramientas prácticas para ahorrar más y liquidar deudas efectivamente.</p><div class="bonus-val">Valorado en $10 USD — INCLUIDO GRATIS</div></div>
-    </div>
+    <div class="bonus-card reveal"><img class="bonus-img" src="bonus-1-copy.webp" alt="Bonus 1"/><div class="bonus-body"><strong>Cómo crear un negocio exitoso desde cero</strong><p>Un plan detallado para iniciar tu propio negocio con éxito, desde la planificación hasta la ejecución.</p><div class="bonus-val">Valorado en $12 USD — INCLUIDO GRATIS</div></div></div>
+    <div class="bonus-card reveal"><img class="bonus-img" src="bonus-2-copy.webp" alt="Bonus 2"/><div class="bonus-body"><strong>7 maneras de generar ingresos en internet</strong><p>Siete estrategias probadas para ganar dinero incluso mientras duermes.</p><div class="bonus-val">Valorado en $15 USD — INCLUIDO GRATIS</div></div></div>
+    <div class="bonus-card reveal"><img class="bonus-img" src="bonus-3-copy.webp" alt="Bonus 3"/><div class="bonus-body"><strong>12 hacks letales de persuasión para vender más</strong><p>Aprende a usar la psicología del comportamiento humano para cerrar más ventas.</p><div class="bonus-val">Valorado en $11 USD — INCLUIDO GRATIS</div></div></div>
+    <div class="bonus-card reveal"><img class="bonus-img" src="bonus-4-1.webp" alt="Bonus 4"/><div class="bonus-body"><strong>La guía completa para invertir como un experto</strong><p>Todo lo que necesitas para invertir con confianza y construir una cartera sólida.</p><div class="bonus-val">Valorado en $12 USD — INCLUIDO GRATIS</div></div></div>
+    <div class="bonus-card reveal"><img class="bonus-img" src="Bonus-5-1.webp" alt="Bonus 5"/><div class="bonus-body"><strong>10 estrategias para gestionar tu dinero inteligentemente</strong><p>Herramientas prácticas para ahorrar más y liquidar deudas efectivamente.</p><div class="bonus-val">Valorado en $10 USD — INCLUIDO GRATIS</div></div></div>
   </div>
-
-  <img class="product-valor" src="producto-valor.webp" alt="Valor del producto"/>
+  <img class="product-valor-img" src="producto-valor.webp" alt="Valor total del producto"/>
 </div>
 
 <div class="gold-rule"></div>
 
 <div class="dark-band">
   <div class="dark-band-inner">
-    <div class="label">Testimonios</div>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4.5vw,42px);font-weight:700;color:var(--white);line-height:1.2;margin-bottom:32px;">Más de 7,000 personas ya transformaron su mentalidad</h2>
+    <div class="eyebrow">Testimonios</div>
+    <h2>Más de 7,000 personas ya <em>transformaron su mentalidad</em></h2>
     <div class="testi-grid">
-      <div class="testi-card reveal">
-        <img class="testi-avatar" src="rodrigo.svg" alt="Rodrigo"/>
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Me pareció excelente, muy atrapante y cada capítulo me dejó pensando. Es un libro que toda persona debería leer."</p>
-        <div class="testi-name">Rodrigo A. — México</div>
-      </div>
-      <div class="testi-card reveal">
-        <img class="testi-avatar" src="barbara.svg" alt="Barbara"/>
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"En menos de una semana cambió completamente cómo veo mis decisiones de dinero. Vale mucho más de lo que cuesta."</p>
-        <div class="testi-name">Bárbara M. — Colombia</div>
-      </div>
-      <div class="testi-card reveal">
-        <img class="testi-avatar" src="tomas.svg" alt="Tomas"/>
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Nunca pensé que un ebook pudiera cambiarme tanto la perspectiva. Los bonuses son increíbles."</p>
-        <div class="testi-name">Tomás V. — Argentina</div>
-      </div>
+      <div class="testi-card reveal"><img class="testi-avatar" src="rodrigo.svg" alt="Rodrigo"/><div class="testi-stars">★★★★★</div><p class="testi-text">"Me pareció excelente, muy atrapante y cada capítulo me dejó pensando. Es un libro que toda persona debería leer."</p><div class="testi-name">Rodrigo A. — México</div></div>
+      <div class="testi-card reveal"><img class="testi-avatar" src="barbara.svg" alt="Barbara"/><div class="testi-stars">★★★★★</div><p class="testi-text">"En menos de una semana cambió completamente cómo veo mis decisiones de dinero. Vale mucho más de lo que cuesta."</p><div class="testi-name">Bárbara M. — Colombia</div></div>
+      <div class="testi-card reveal"><img class="testi-avatar" src="tomas.svg" alt="Tomas"/><div class="testi-stars">★★★★★</div><p class="testi-text">"Nunca pensé que un ebook pudiera cambiarme tanto la perspectiva. Los bonuses son increíbles."</p><div class="testi-name">Tomás V. — Argentina</div></div>
     </div>
   </div>
 </div>
@@ -207,14 +177,14 @@
 <div class="gold-rule"></div>
 
 <section class="price-section">
-  <div class="label" style="justify-content:center;">Adquiere tu copia</div>
-  <h2>Obtén el ebook completo<br>+ los 5 bonuses ahora</h2>
-  <p>Precio especial por tiempo limitado</p>
-  <div class="price-card">
+  <div class="eyebrow" style="justify-content:center;">Adquiere tu copia ahora</div>
+  <h2>Obtén el ebook completo + los <em>5 bonuses</em> ahora</h2>
+  <p>Precio especial por tiempo limitado — no pierdas esta oportunidad</p>
+  <div class="price-box">
     <div class="price-old">Valor total: $75 USD</div>
-    <div class="price-amount"><sup>$</sup>14.99</div>
+    <div class="price-num"><sup>$</sup>14.99</div>
     <div class="price-note">USD · Pago único · Sin mensualidades</div>
-    <div class="price-includes">
+    <div class="price-list">
       ✦ <span>Ebook Desbloquea Tu Mente Millonaria</span><br>
       ✦ <span>Bonus I:</span> Cómo crear un negocio exitoso<br>
       ✦ <span>Bonus II:</span> 7 maneras de generar ingresos online<br>
@@ -223,20 +193,4 @@
       ✦ <span>Bonus V:</span> Gestión inteligente del dinero<br>
       ✦ <span>Actualizaciones sin costo adicional</span>
     </div>
-    <a href="https://go.hotmart.com/Q100560201X?ap=5e14" class="price-cta" onclick="fbq('track','Lead')">✦ Sí, Quiero el Ebook y los Bonuses →</a>
-    <div class="price-secure">🔒 Pago 100% seguro procesado por Hotmart · Acceso inmediato</div>
-  </div>
-  <img class="guarantee-img" src="SATISFACION-GARANTIZADA2-2.png" alt="Garantía de satisfacción"/>
-</section>
-
-<footer>
-  <p>Este sitio es un afiliado independiente y no está directamente afiliado con el autor.<br>Recomendamos este producto porque creemos genuinamente en su valor.<br><br><a href="#">Aviso de privacidad</a> · <a href="#">Contacto</a></p>
-</footer>
-
-<script>
-  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
-
-</body>
-</html>
+    <a href="https://go.hotmart.com/Q100560201X?ap=5e14" cla
