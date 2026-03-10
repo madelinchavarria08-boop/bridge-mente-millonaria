@@ -22,14 +22,14 @@
     :root{--gold:#C9A84C;--gold-bright:#F0CC6A;--gold-dim:#8A6E30;--gold-glow:rgba(201,168,76,0.3);--bg:#060504;--surface:#0D0B09;--surface2:#131008;--border:rgba(201,168,76,0.2);--text:#EDE5D5;--text-muted:rgba(237,229,213,0.6);--white:#FBF7EF;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
-    body{background:var(--bg);color:var(--text);font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden;}
+    body{background:var(--bg);color:var(--text);font-family:'Open Sans',sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden;padding-top:46px;}
     body::before{content:'';position:fixed;inset:0;z-index:0;opacity:0.4;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;}
     *{position:relative;z-index:1;}
-    .topbar{background:var(--gold);color:#060504;text-align:center;padding:13px 20px;font-family:'Open Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;}
+    .topbar{background:var(--gold);color:#060504;text-align:center;padding:13px 20px;font-family:'Open Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;position:fixed;top:0;left:0;right:0;z-index:9999;}
     .hero{padding:80px 24px 72px;text-align:center;background:radial-gradient(ellipse at 50% -10%,rgba(201,168,76,0.15) 0%,transparent 60%);border-bottom:1px solid var(--border);}
     .hero-badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;padding:7px 20px;margin-bottom:28px;font-weight:600;}
     .hero h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(36px,7vw,72px);color:var(--white);line-height:1.08;max-width:860px;margin:0 auto 12px;animation:heroEntrance 1.2s ease-out both;}
-@keyframes heroEntrance{0%{opacity:0;transform:translateY(-30px) scale(0.96);}60%{opacity:1;transform:translateY(4px) scale(1.01);}100%{opacity:1;transform:translateY(0) scale(1);}}
+    @keyframes heroEntrance{0%{opacity:0;transform:translateY(-30px) scale(0.96);}60%{opacity:1;transform:translateY(4px) scale(1.01);}100%{opacity:1;transform:translateY(0) scale(1);}}
     .hero h1 span{color:var(--gold-bright);font-style:italic;}
     .hero-line{width:70px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:28px auto;}
     .hero-sub{font-size:clamp(16px,2.2vw,20px);color:var(--text-muted);max-width:580px;margin:0 auto 44px;line-height:1.85;font-weight:300;}
@@ -94,12 +94,12 @@
     footer a{color:rgba(237,229,213,0.32);text-decoration:none;}
     .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
-    @media(max-width:520px){.hero{padding:56px 18px 52px;}.section,.dark-band{padding:56px 18px;}.price-box{padding:28px 18px;}.price-num{font-size:54px;}.bonus-card{flex-direction:column;align-items:flex-start;}.bonus-img{width:70px;height:70px;}}
+    @media(max-width:520px){.hero{padding:56px 18px 52px;}.section,.dark-band{padding:56px 18px;}.price-box{padding:28px 18px;}.price-num{font-size:54px;}.bonus-card{flex-direction:column;align-items:flex-start;}.bonus-img{width:70px;height:70px;}.topbar{font-size:12px;padding:11px 12px;}}
   </style>
 </head>
 <body>
 
-<div class="topbar">⚡ OFERTA ESPECIAL · Solo $14.99 USD · Acceso inmediato · Sin mensualidades</div>
+<div class="topbar">⚡ OFERTA ESPECIAL · $14.99 USD &nbsp;|&nbsp; ⏳ Expira en: <span id="countdown-top" style="font-weight:800;letter-spacing:0.08em;">30:00</span></div>
 
 <section class="hero">
   <div class="hero-badge">◆ Ebook Digital · Julián Musa</div>
@@ -108,36 +108,6 @@
   <p class="hero-sub">Más de 7,000 personas ya transformaron su relación con el dinero. Ahora es tu turno.</p>
   <a href="https://go.hotmart.com/Q100560201X?ap=5e14" class="btn-main" onclick="fbq('track','Lead')">✦ Quiero el Ebook Ahora →</a>
   <div class="hero-trust">🔒 Pago seguro · Acceso inmediato · Garantía incluida</div>
-
-<div style="margin-top:32px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);padding:20px 28px;max-width:420px;margin-left:auto;margin-right:auto;">
-  <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px;">⚠️ Esta oferta expira en:</div>
-  <div id="countdown" style="display:flex;justify-content:center;gap:16px;"></div>
-</div>
-
-<script>
-  function startCountdown(){
-    const key='countdown_end';
-    let end=localStorage.getItem(key);
-    if(!end){
-      end=Date.now()+(30*60*1000); // 30 minutos
-      localStorage.setItem(key,end);
-    }
-    function update(){
-      const diff=Math.max(0,end-Date.now());
-      const m=Math.floor(diff/60000);
-      const s=Math.floor((diff%60000)/1000);
-      const box=(n,l)=>`<div style="text-align:center"><div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:#F0CC6A;line-height:1">${String(n).padStart(2,'0')}</div><div style="font-size:10px;letter-spacing:0.15em;color:rgba(237,229,213,0.5);margin-top:4px">${l}</div></div>`;
-      document.getElementById('countdown').innerHTML=
-        box(m,'MIN')+
-        `<div style="font-family:'Playfair Display',serif;font-size:42px;color:#F0CC6A;align-self:flex-start;margin-top:2px">:</div>`+
-        box(s,'SEG');
-      if(diff>0) setTimeout(update,1000);
-      else document.getElementById('countdown').innerHTML='<div style="color:#F0CC6A;font-size:14px;font-weight:700">⚠️ ¡Oferta expirada!</div>';
-    }
-    update();
-  }
-  startCountdown();
-</script>
 </section>
 
 <div class="gold-rule"></div>
@@ -235,8 +205,32 @@
 </footer>
 
 <script>
-  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+  // Reveal on scroll
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.08});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Countdown 30 minutos
+  (function(){
+    const key='cd_end_v1';
+    let end=localStorage.getItem(key);
+    if(!end){
+      end=Date.now()+(30*60*1000);
+      localStorage.setItem(key,end);
+    }
+    end=parseInt(end);
+    function update(){
+      const diff=Math.max(0,end-Date.now());
+      const m=Math.floor(diff/60000);
+      const s=Math.floor((diff%60000)/1000);
+      const el=document.getElementById('countdown-top');
+      if(el) el.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+      if(diff>0) setTimeout(update,1000);
+      else if(el){el.textContent='¡EXPIRÓ!';el.style.color='#ff4444';}
+    }
+    update();
+  })();
 </script>
 
 </body>
