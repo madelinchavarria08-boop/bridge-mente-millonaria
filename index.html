@@ -108,6 +108,36 @@
   <p class="hero-sub">Más de 7,000 personas ya transformaron su relación con el dinero. Ahora es tu turno.</p>
   <a href="https://go.hotmart.com/Q100560201X?ap=5e14" class="btn-main" onclick="fbq('track','Lead')">✦ Quiero el Ebook Ahora →</a>
   <div class="hero-trust">🔒 Pago seguro · Acceso inmediato · Garantía incluida</div>
+
+<div style="margin-top:32px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);padding:20px 28px;max-width:420px;margin-left:auto;margin-right:auto;">
+  <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px;">⚠️ Esta oferta expira en:</div>
+  <div id="countdown" style="display:flex;justify-content:center;gap:16px;"></div>
+</div>
+
+<script>
+  function startCountdown(){
+    const key='countdown_end';
+    let end=localStorage.getItem(key);
+    if(!end){
+      end=Date.now()+(30*60*1000); // 30 minutos
+      localStorage.setItem(key,end);
+    }
+    function update(){
+      const diff=Math.max(0,end-Date.now());
+      const m=Math.floor(diff/60000);
+      const s=Math.floor((diff%60000)/1000);
+      const box=(n,l)=>`<div style="text-align:center"><div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:#F0CC6A;line-height:1">${String(n).padStart(2,'0')}</div><div style="font-size:10px;letter-spacing:0.15em;color:rgba(237,229,213,0.5);margin-top:4px">${l}</div></div>`;
+      document.getElementById('countdown').innerHTML=
+        box(m,'MIN')+
+        `<div style="font-family:'Playfair Display',serif;font-size:42px;color:#F0CC6A;align-self:flex-start;margin-top:2px">:</div>`+
+        box(s,'SEG');
+      if(diff>0) setTimeout(update,1000);
+      else document.getElementById('countdown').innerHTML='<div style="color:#F0CC6A;font-size:14px;font-weight:700">⚠️ ¡Oferta expirada!</div>';
+    }
+    update();
+  }
+  startCountdown();
+</script>
 </section>
 
 <div class="gold-rule"></div>
